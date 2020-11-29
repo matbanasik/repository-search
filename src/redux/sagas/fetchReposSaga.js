@@ -8,7 +8,18 @@ function* fetchRepos() {
         `https://api.github.com/search/repositories?q=${query}`
     );
     const repos = yield response.json();
-    yield put(setRepos(repos.items));
+    const mappedRepos = repos.items.map(
+        ({ id, name, owner, score, language }) => {
+            return {
+                id,
+                name,
+                score,
+                language,
+                owner: owner.login,
+            };
+        }
+    );
+    yield put(setRepos(mappedRepos));
 }
 
 export function* fetchReposSaga() {

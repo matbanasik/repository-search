@@ -16,7 +16,7 @@ const reposReducer = (
         case SET_QUERY:
             return { ...state, query: action.payload };
         case REPOS_FETCH_REQUESTED:
-            return { ...state, items: null, loading: true };
+            return { ...state, loading: true };
         case REPOS_FETCH_SUCCEEDED:
             return { ...state, items: action.payload, loading: false };
         default:
