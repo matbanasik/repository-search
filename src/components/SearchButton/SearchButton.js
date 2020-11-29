@@ -1,7 +1,11 @@
 import React from 'react';
 
-const SearchButton = () => {
-    return <button type="button">Search</button>;
+const SearchButton = ({ onClick }) => {
+    return (
+        <button type="button" onClick={onClick}>
+            Search
+        </button>
+    );
 };
 
 export default SearchButton;
