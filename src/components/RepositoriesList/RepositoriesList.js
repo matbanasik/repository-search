@@ -9,17 +9,17 @@ const columns = [
     { field: 'language', headerName: 'Language', width: 200 },
 ];
 
-const RepositoriesList = ({ items, onRowClick }) => {
+const RepositoriesList = ({ items, onRowClick, loading }) => {
     return (
-        <div style={{ height: 400, width: '100%' }}>
-            <DataGrid
-                rows={items}
-                columns={columns}
-                pageSize={10}
-                onCellClick={onRowClick}
-                hideFooterSelectedRowCount
-            />
-        </div>
+        <DataGrid
+            rows={items}
+            columns={columns}
+            pageSize={10}
+            onCellClick={onRowClick}
+            loading={loading}
+            className="data-table"
+            hideFooterSelectedRowCount
+        />
     );
 };
 
@@ -30,14 +30,16 @@ RepositoriesList.propTypes = {
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
             score: PropTypes.number.isRequired,
-            language: PropTypes.string.isRequired,
+            language: PropTypes.string,
             owner: PropTypes.string.isRequired,
         })
     ),
+    loading: PropTypes.bool,
 };
 
 RepositoriesList.defaultProps = {
     items: [],
+    loading: false,
 };
 
 export default RepositoriesList;

@@ -15,3 +15,12 @@
         margin-right: 25px;
     }
 }
+
+.data-table {
+    width: 100%;
+    min-height: 400px;
+
+    [role='row'] {
+        cursor: pointer;
+    }
+}
