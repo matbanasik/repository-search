@@ -1,5 +1,6 @@
 import React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
+import PropTypes from 'prop-types';
 
 const columns = [
     { field: 'name', headerName: 'Name', width: 200 },
@@ -20,6 +21,23 @@ const RepositoriesList = ({ items, onRowClick }) => {
             />
         </div>
     );
+};
+
+RepositoriesList.propTypes = {
+    onRowClick: PropTypes.func.isRequired,
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            score: PropTypes.number.isRequired,
+            language: PropTypes.string.isRequired,
+            owner: PropTypes.string.isRequired,
+        })
+    ),
+};
+
+RepositoriesList.defaultProps = {
+    items: [],
 };
 
 export default RepositoriesList;

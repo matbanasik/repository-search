@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 const SearchInput = ({ onChange }) => {
     return (
@@ -9,6 +10,10 @@ const SearchInput = ({ onChange }) => {
             onChange={onChange}
         />
     );
+};
+
+SearchInput.propTypes = {
+    onChange: PropTypes.func.isRequired,
 };
 
 export default SearchInput;

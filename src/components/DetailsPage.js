@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { List, ListItem, ListItemText } from '@material-ui/core';
+import PropTypes from 'prop-types';
 import { fetchDetails } from '../redux/actions';
 
 const DetailsPage = ({ repositoryId }) => {
@@ -26,6 +27,10 @@ const DetailsPage = ({ repositoryId }) => {
             </List>
         </div>
     );
+};
+
+DetailsPage.propTypes = {
+    repositoryId: PropTypes.string.isRequired,
 };
 
 export default DetailsPage;
