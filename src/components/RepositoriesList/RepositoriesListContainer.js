@@ -4,7 +4,6 @@ import RepositoriesList from './RepositoriesList';
 
 const RepositoriesListContainer = () => {
     const repos = useSelector((state) => state.repos.items);
-    console.log(repos);
     return <RepositoriesList items={repos} />;
 };
 

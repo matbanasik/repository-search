@@ -2,6 +2,7 @@ import {
     SET_QUERY,
     REPOS_FETCH_SUCCEEDED,
     REPOS_FETCH_REQUESTED,
+    SET_DETAILS,
 } from '../actions/types';
 
 const reposReducer = (
@@ -9,6 +10,7 @@ const reposReducer = (
         loading: false,
         items: [],
         query: '',
+        details: null,
     },
     action
 ) => {
@@ -19,6 +21,8 @@ const reposReducer = (
             return { ...state, loading: true };
         case REPOS_FETCH_SUCCEEDED:
             return { ...state, items: action.payload, loading: false };
+        case SET_DETAILS:
+            return { ...state, details: action.payload };
         default:
             return state;
     }
