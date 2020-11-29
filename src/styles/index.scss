@@ -1,0 +1,17 @@
+.app-container {
+    display: grid;
+    grid-gap: 30px;
+    padding: 30px 200px;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div {
+        margin-right: 25px;
+    }
+}

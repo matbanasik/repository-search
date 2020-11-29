@@ -8,8 +8,10 @@ const App = () => {
     // const isLoading = useSelector((state) => state.repos.items);
     return (
         <Provider store={store}>
-            <SearchBarContainer />
-            <RepositoriesListContainer />
+            <div className="app-container">
+                <SearchBarContainer />
+                <RepositoriesListContainer />
+            </div>
         </Provider>
     );
 };

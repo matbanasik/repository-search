@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SearchBar = ({ children }) => {
-    return <div>{children}</div>;
+    return <div className="searchbar">{children}</div>;
 };
 
 export default SearchBar;

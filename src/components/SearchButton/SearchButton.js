@@ -1,10 +1,11 @@
 import React from 'react';
+import { Button } from '@material-ui/core';
 
 const SearchButton = ({ onClick }) => {
     return (
-        <button type="button" onClick={onClick}>
+        <Button variant="contained" color="primary" onClick={onClick}>
             Search
-        </button>
+        </Button>
     );
 };
 
